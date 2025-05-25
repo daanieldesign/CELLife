@@ -52,7 +52,7 @@
                                         <label for="price_from" class="block text-sm mb-1" style="font-family: NunitoLight;">
                                             Cena od: <span x-text="priceFrom + ' Kč'" class="font-semibold"></span>
                                         </label>
-                                        <input type="range" id="price_from" name="price_from" min="0" max="100000000" step="1"
+                                        <input type="range" id="price_from" name="price_from" min="0" max="1000000" step="1"
                                             class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-400"
                                             x-model="priceFrom">
                                     </div>
@@ -61,7 +61,7 @@
                                         <label for="price_to" class="block text-sm mb-1" style="font-family: NunitoLight;">
                                             Cena do: <span x-text="priceTo + ' Kč'" class="font-semibold"></span>
                                         </label>
-                                        <input type="range" id="price_to" name="price_to" min="0" max="100000000" step="1"
+                                        <input type="range" id="price_to" name="price_to" min="0" max="1000000" step="1"
                                             class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-blue-400"
                                             x-model="priceTo">
                                     </div>
@@ -154,10 +154,10 @@
             </span>
             @endif
 
-            @if(request('price_to') < 100000000)
+            @if(request('price_to') < 1000000)
             <span class="inline-flex items-center px-3 py-1 rounded-full text-sm bg-blue-100 text-blue-800">
                 Cena do: {{ request('price_to') }} Kč
-                <a href="{{ request()->fullUrlWithQuery(['price_to' => 100000000]) }}" class="ml-1 text-blue-800 hover:text-blue-900">
+                <a href="{{ request()->fullUrlWithQuery(['price_to' => 1000000]) }}" class="ml-1 text-blue-800 hover:text-blue-900">
                     <x-heroicon-o-x-mark class="h-4 w-4" />
                 </a>
             </span>
